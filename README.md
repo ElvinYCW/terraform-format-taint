@@ -49,6 +49,6 @@ After we taint the resource, we will run 'terraform apply' and the plan output w
 
 We will continue the terraform apply execution by passing the value 'yes', and upon completion the result will be:
 
-  Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
+      Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 
 ### do remember to delete all resources with 'terraform destroy'.
