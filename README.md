@@ -13,6 +13,7 @@ Upon executing the command 'terraform apply', the resource 'azurerm_linux_virtua
   "resources": [
     {
       "mode": "managed",
+  
       "type": "azurerm_linux_virtual_machine",
       "name": "myterraformvm",
       "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
@@ -25,6 +26,7 @@ Now, we shall pass the command 'terraform taint azurerm_linux_virtual_machine.my
   "resources": [
     {
       "mode": "managed",
+  
       "type": "azurerm_linux_virtual_machine",
       "name": "myterraformvm",
       "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
@@ -33,17 +35,17 @@ Now, we shall pass the command 'terraform taint azurerm_linux_virtual_machine.my
           "status": "tainted",
           "schema_version": 0,
 
-(To see the state file, you may use 'cat terraform.tfstate' or 'vim terraform.tfstate' follow by ':q!' if vim is used.)
+(To see the state file, you may use 'cat terraform.tfstate' or 'vim terraform.tfstate' follow by ':q!' if vim is used or any text editor.)
 
 After we taint the resource, we will run 'terraform apply' and the plan output will show it will add 1 new, change nothing and destroy 1 existing resource as follow:
 
-  Plan: 1 to add, 0 to change, 1 to destroy.
-
-  Do you want to perform these actions?
-  Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
-
-  Enter a value: 
+      Plan: 1 to add, 0 to change, 1 to destroy.
+      
+      Do you want to perform these actions?
+      Terraform will perform the actions described above.
+      Only 'yes' will be accepted to approve.
+      
+      Enter a value: 
 
 We will continue the terraform apply execution by passing the value 'yes', and upon completion the result will be:
 
