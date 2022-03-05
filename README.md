@@ -1,6 +1,6 @@
 ### TERRAFORM FORMAT AND TAINT COMMANDS
 
-#### Ensure that the Azure CLI is pre-installed, a valid Azure account is logged in through the CLI before attempting.
+#### Ensure that the Azure CLI is pre-installed, a valid Azure account is logged in through the CLI before attempting. You may use *VSCode* or any editor to view the ***main.tf*** and ***terraform.tfstate*** files.
 
 #### *terraform fmt*:
 We use this command to format or beautify the codes, whether the files are main.tf, variables.tf or contain other terraform codes. To view the result, you will have to look at the codes in my ***main.tf*** file before and after running the command `terraform fmt`.
@@ -33,8 +33,6 @@ Now, we shall pass the command `terraform taint azurerm_linux_virtual_machine.my
           "status": "tainted",
           "schema_version": 0,
 ```
-(To see the state file, you may use **cat terraform.tfstate** or **vim terraform.tfstate** follow by **:q!** if vim is used or any *text editor*.)
-
 After we taint the resource, we will run `terraform apply` and the plan output will show it will ***add 1 new, change nothing and destroy 1*** existing resource as follow:
 ```
       Plan: 1 to add, 0 to change, 1 to destroy.
